@@ -38,7 +38,7 @@ print(sorted(Scores))
 #----------------------------------------
 
 grades = [[5, 14, 7], [23, 36, 28], [88, 80, 92]]
-print(grades[2])
+print(grades[2]) #數學成績
 print(sum(grades[0])/len(grades[0]), sum(grades[1])/len(grades[1]), sum(grades[2])/len(grades[2]))
 
 grades.insert(0, [94, 90, 96])

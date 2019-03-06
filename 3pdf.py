@@ -52,9 +52,9 @@ print(TupleScores1.count(1)) #計算某元素在Tuple中的個數
 print(TupleScores1 + TupleScores2) #串接兩個Tuple
 print(sorted(TupleScores1)) #Tuple排序
 print(5 in TupleScores1) #判斷值是否在List中
-
-a, b, c, d, e, f = TupleScores1 #tuple unpacking
+a, b, c, d, e, f = TupleScores1 #tuple unpacking 給一個別名的概念
 print(a, b, c, d, e, f)
+#--------------------------------------------------------------
 #課堂練習
 gradesTuple = ((5, 14, 7), (23, 36, 28), (88, 80, 92))
 print(gradesTuple[2]) #數學成績
@@ -65,4 +65,59 @@ gradesTuple2 = ((94, 90, 96),) #新增自然數學成績
 print(gradesTuple + gradesTuple2)
 #--------------------------------------------------------------
 #--------------------------------------------------------------
-#Dictionary
+#Dictionary 前面為Key,後面為value
+family = {} #初始化
+family['dad'] = 'aaa' #新增一個元素
+print(family)
+family.update({'mom':'bbb', 'cat':'ccc', 'dog':'ddd'}) #新增多個元素
+print(family)
+del family['dog'] #刪除元素
+print(family)
+family.pop('cat') #刪除元素 #可以印出所刪除之元素 print(family.pop('dad'))
+print(family)
+family['mom'] = 'change' #修改元素
+print(family)
+print(family['dad']) #取得dict中某元素的值,如果沒有這個Key就會'出錯'
+print(family.get('no')) #取得dict中某元素的值,,如果沒有這個Key就會'回傳none'
+print('dad' in family)  #判斷Key是否在dict中
+print(family.keys()) #印出dict的keys
+print(family.values()) #印出dict的values
+print(family.items()) #印出dict的所有元素(keys+values)
+#--------------------------------------------------------------
+#課堂練習
+gradesDict = {'chinese':[5, 14, 7],
+              'eng':[23, 36, 28],
+              'math':[88, 80, 92]}
+print(gradesDict['math']) #數學成績
+print(sum(gradesDict['chinese']) / len(gradesDict['chinese']))
+print(sum(gradesDict['eng']) / len(gradesDict['eng']))
+print(sum(gradesDict['math']) / len(gradesDict['math']))
+gradesDict['sci'] = [94, 90, 96] #新增一個元素
+print(gradesDict)
+#--------------------------------------------------------------
+#--------------------------------------------------------------
+#Set
+fruits = {'apple', 'banana', 'guava', 'apple'}
+print(len(fruits)) #印出元素個數
+print('pp' in fruits) #判斷值是否在set中
+fruits.add('water') #新增元素
+print(fruits)
+fruits.remove('apple') #刪除元素,如果沒有這個元素就會'出錯'
+print(fruits)
+fruits.discard('no') #刪除元素,如果沒有這個元素就會'略過'
+fruits.clear() #刪除全部元素
+print(fruits)
+#--------------------------------------------------------------
+set1 = {'a', 'b', 'c', 'c'}
+set2 = {'d', 'b', 'e', 'e'}
+print(set1 | set2) #聯集
+print(set1 & set2) #交集
+print(set1.intersection(set2)) #交集
+print(set1 - set2) #差集
+#--------------------------------------------------------------
+allStudents={'John', 'Eva', 'Jill', 'Eric', 'Andy', 'Albert', 'Polina', 'Kristin', 'Angela'}
+guitarClub = {'John', 'Eva', 'Jill', 'Eric', 'Andy'}
+danceClub = {'Andy', 'Eric', 'Albert', 'Polina', 'Kristin'}
+print(guitarClub & danceClub) #交集 兩個社團都參加
+print(guitarClub - danceClub) #差集 參加吉他沒有參加熱舞
+print(allStudents - (guitarClub | danceClub)) #所有-聯集 都沒參加社團的學生
